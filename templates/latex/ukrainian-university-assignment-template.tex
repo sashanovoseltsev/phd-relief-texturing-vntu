@@ -13,7 +13,7 @@
 
 \geometry{
   left=25mm,
-  right=15mm,
+  right=10mm,
   top=20mm,
   bottom=20mm
 }
@@ -23,7 +23,7 @@
 \setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{3em}
 \onehalfspacing
-\setlist{nosep,leftmargin=1.25cm}
+\setlist{nosep,leftmargin=1.25cm,labelsep=0.25cm}
 
 \newcommand{\eng}[1]{\foreignlanguage{english}{#1}}
 \newcommand{\sectiontitle}[1]{%
@@ -48,7 +48,7 @@
   \setlength{\rightskip}{0pt}
   \setlength{\parskip}{0pt}
   \justifying
-  \begin{enumerate}[leftmargin=*,label={[\arabic*]},itemsep=0pt,topsep=0pt,parsep=0pt]
+  \begin{enumerate}[leftmargin=0.75cm,labelwidth=1cm,labelsep=0cm,align=left,label={[\arabic*]},itemsep=0pt,topsep=0pt,parsep=0pt]
 }{%
   \end{enumerate}
   \endgroup
@@ -85,8 +85,8 @@ D(u,v)=1-H(u,v).
 Короткий підсумок роботи.
 
 \begin{numberedreferences}
-  \item Author, A. A. (Year). Title of work. \textit{Journal or Publisher}.
-  \item Author, B. B., \& Author, C. C. (Year). Title of article. \textit{Journal Title, 12}(3), 45--67.
+  \item Author, A. A. Title of work. \textit{Journal or Publisher}, 2024.
+  \item Author, B. B., \& Author, C. C. Title of article. \textit{Journal Title}, vol. 12, no. 3, pp. 45--67, 2023.
 \end{numberedreferences}
 
 \end{document}

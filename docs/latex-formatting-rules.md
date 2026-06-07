@@ -11,6 +11,8 @@
 - Use Ukrainian as the main language unless the user asks for another language.
 - Do not add extra vertical spacing between paragraphs; set `\parskip` to `0pt`.
 - Use a first-line paragraph indent, typically `1.25cm`, unless the assignment requires another style.
+- Use page margins: top `2cm`, bottom `2cm`, left `2.5cm`, right `1cm`.
+- Align list markers at `1.25cm`.
 - Format section and paragraph titles in bold.
 - Add one blank line of vertical space between major sections. In LaTeX, use a controlled section macro rather than manually inserting repeated empty lines.
 - Use `amsmath` for displayed equations and put important formulas in `\[ ... \]`.
@@ -23,9 +25,40 @@
 
 - Use the current Ukrainian dissertation formatting baseline from the Ministry of Education and Science of Ukraine Order No. 40 dated 2017-01-12, as amended by Order No. 759 dated 2019-05-31.
 - For full dissertation drafts, use A4 paper, Times New Roman, 14 pt, and 1.5 line spacing unless the university, supervisor, or dissertation council provides a stricter template.
-- Recommended page margins for dissertation-style documents: left `20-25mm`, right at least `10mm`, top `20mm`, bottom `20mm`. For current university assignments, prefer the already used practical layout: left `25mm`, right `15mm`, top `20mm`, bottom `20mm`.
+- Recommended page margins for dissertation-style documents and current university assignments: left `25mm`, right `10mm`, top `20mm`, bottom `20mm`.
 - A dissertation may be prepared in LaTeX if the resulting PDF follows the required visual formatting.
 - Bibliographic descriptions in Ukrainian dissertations may use a selected recognized style with regard to DSTU 8302:2015. For this project, use APA formatting when the user asks for literature/references in APA.
+
+## DOCX-Derived Dissertation Profile
+
+Extracted from the local Word sample `Дисертація-1.docx` at `/Users/admin/Documents/Documents - Admin’s MacBook Pro/Personal/PhD/papers/Дисертація-1.docx`.
+
+- Page format: A4 portrait, `21.0cm x 29.7cm`.
+- Use following margins: left `2.5cm`, right `1.0cm`, top `2.0cm`, bottom `2.0cm`.
+- Header/footer distance: approximately `1.25cm`.
+- The sample also contains at least one landscape A4 section for wide material. In LaTeX, use `pdflscape` or a controlled `landscape`/`\newgeometry` block only when a wide table or appendix requires it.
+- Normal/body style: Times New Roman, `14pt`, justified alignment, 1.5 line spacing, no paragraph spacing after.
+- Body paragraphs commonly use first-line indent around `1.25cm` (`708` Word twips).
+- Main heading style: centered, bold, Times New Roman 14 pt inherited from body, with spacing after about `12pt`.
+- Second-level headings in the sample are numbered, justified, and inherit body typography.
+- Table text in the sample is smaller, approximately `9pt`, centered, with compact line spacing. Use smaller table text only when needed for dense data.
+- Figure captions are centered, smaller than body text, and placed close to the figure.
+- The sample uses footnotes/endnotes, so dissertation templates should not block later use of `\footnote{...}`.
+
+LaTeX geometry matching the observed DOCX sample:
+
+```latex
+\geometry{
+  left=25mm,
+  right=10mm,
+  top=20mm,
+  bottom=20mm,
+  headsep=12.5mm,
+  footskip=12.5mm
+}
+```
+
+Use this stricter DOCX-derived geometry for dissertation-style drafts when matching an existing Ukrainian dissertation sample is more important than preserving the current assignment layout.
 
 ## Recommended LaTeX Preamble
 
@@ -45,7 +78,7 @@
 
 \geometry{
   left=25mm,
-  right=15mm,
+  right=10mm,
   top=20mm,
   bottom=20mm
 }
@@ -59,7 +92,7 @@
 % Use \singlespacing or \linespread{1.0} only when the assignment explicitly expects compact text.
 \onehalfspacing
 
-\setlist{nosep,leftmargin=1.25cm}
+\setlist{nosep,leftmargin=1.25cm,labelsep=0.25cm}
 
 \newcommand{\eng}[1]{\foreignlanguage{english}{#1}}
 \newcommand{\sectiontitle}[1]{%
@@ -86,11 +119,11 @@
 
 - The literature section title should be centered.
 - Use the Ukrainian title `Список використаних джерел` unless the assignment explicitly asks for `Література` or `References`.
-- Format literature entries according to APA style when requested, but keep a numeric index for each source in Ukrainian university assignments when examples or local expectations show numbered references.
-- For this project, bibliography entries should have no first-line paragraph indent and no hanging indent; in Word/Google Docs terms, the first-line indent marker and left-indent marker are at the same position.
+- Format literature entries as numbered Ukrainian dissertation-style references unless the user explicitly requests strict APA. In this local rule, the year goes at the end of the entry, after pages if pages are present.
+- For this project, bibliography entries should have no normal paragraph first-line indent. Use `leftmargin=0.75cm`, `labelwidth=1cm`, and `labelsep=0cm` so the bibliography item number aligns with the main text edge while leaving enough reserved marker width for two-digit items such as `[10]`.
 - Bibliography text alignment should be justified.
 - Keep a single paragraph per source entry. Do not split one source into multiple paragraphs.
-- If strict APA 7 compliance is required by a journal or supervisor, verify whether numbered references and no hanging indent are acceptable. The current local preference is numbered APA-like entries without bibliography indent.
+- If strict APA 7 compliance is required by a journal or supervisor, verify whether numbered references and year-at-end references are acceptable. The current local preference is numbered Ukrainian dissertation-style entries.
 
 Recommended manual bibliography block:
 
@@ -106,9 +139,9 @@ Recommended manual bibliography block:
 \setlength{\parskip}{0pt}
 \justifying
 
-\begin{enumerate}[leftmargin=*,label={[\arabic*]},itemsep=0pt,topsep=0pt,parsep=0pt]
-  \item Author, A. A. (Year). Title of work. \textit{Journal or Publisher}. https://doi.org/...
-  \item Author, B. B., \& Author, C. C. (Year). Title of article. \textit{Journal Title, 12}(3), 45--67.
+\begin{enumerate}[leftmargin=0.75cm,labelwidth=1cm,labelsep=0cm,align=left,label={[\arabic*]},itemsep=0pt,topsep=0pt,parsep=0pt]
+  \item Author, A. A. Title of work. \textit{Journal or Publisher}, 2024.
+  \item Author, B. B., \& Author, C. C. Title of article. \textit{Journal Title}, vol. 12, no. 3, pp. 45--67, 2023.
 \end{enumerate}
 
 \endgroup
