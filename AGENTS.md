@@ -51,6 +51,7 @@ Use these files as the main research memory:
 - `/docs/phd-research-context.md` - project scope, method comparison, terminology, and literature framing.
 - `/docs/dissertation-topic-and-plan.md` - official dissertation topic, justification, goal, tasks, object/subject, and expanded plan from `PhD/звіт_1`.
 - `/docs/literature-and-authors.md` - extracted bibliography and author notes from Dudnyk's dissertation.
+- `/docs/latex-formatting-rules.md` - LaTeX formatting rules for Ukrainian university assignments, dissertation-oriented drafts, formulas, and APA-style references.
 - `/docs/tangent-space-notes.md` - object/world/tangent space, TBN, dot products, and matrix conventions.
 - `/docs/parallax-mapping-notes.md` - height/depth convention, basic parallax, and steep parallax.
 - `/docs/pom-notes.md` - Parallax Occlusion Mapping algorithm and implementation notes.
