@@ -1,0 +1,92 @@
+\documentclass[14pt,a4paper]{extarticle}
+
+\usepackage{fontspec}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+\geometry{
+  left=25mm,
+  right=15mm,
+  top=20mm,
+  bottom=20mm
+}
+
+\setmainfont{Times New Roman}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\onehalfspacing
+\setlist{nosep,leftmargin=1.25cm}
+
+\newcommand{\eng}[1]{\foreignlanguage{english}{#1}}
+\newcommand{\sectiontitle}[1]{%
+  \par\vspace{\baselineskip}%
+  \noindent\textbf{#1}\par
+}
+\newcommand{\assignmenttitle}[1]{%
+  \begin{center}
+  \textbf{#1}
+  \end{center}
+}
+\newcommand{\studentline}[1]{\noindent\textbf{#1}\par}
+\newcommand{\researchtopic}[1]{\noindent\textbf{Тема дисертаційного дослідження: «#1».}\par}
+\newenvironment{numberedreferences}{%
+  \par\vspace{\baselineskip}
+  \begin{center}
+  \textbf{Список використаних джерел}
+  \end{center}
+  \begingroup
+  \setlength{\parindent}{0pt}
+  \setlength{\leftskip}{0pt}
+  \setlength{\rightskip}{0pt}
+  \setlength{\parskip}{0pt}
+  \justifying
+  \begin{enumerate}[leftmargin=*,label={[\arabic*]},itemsep=0pt,topsep=0pt,parsep=0pt]
+}{%
+  \end{enumerate}
+  \endgroup
+}
+
+\begin{document}
+
+\assignmenttitle{Назва дисципліни або роботи}
+
+\studentline{Виконав: аспірант гр. 121-24а, Прізвище Ім'я}
+
+\researchtopic{Методи та програмні засоби рельєфного текстурування для систем формування тривимірних графічних зображень}
+
+\sectiontitle{1. Назва першої секції}
+
+Текст першого абзацу. Українські університетські роботи оформлюються шрифтом Times New Roman, 14 пунктів, з міжрядковим інтервалом 1.5. Англомовний технічний термін можна залишати поруч у дужках, наприклад рельєфне текстурування (\eng{relief texturing}).
+
+Текст другого абзацу без додаткового порожнього рядка у фінальному PDF. Вихідний LaTeX-файл може мати порожній рядок між абзацами, але вертикальний інтервал контролюється через \verb|\parskip|.
+
+\sectiontitle{2. Формули}
+
+Приклад математичного запису:
+\[
+H(u,v), \quad H(u,v) \in [0,1].
+\]
+
+Приклад моделі:
+\[
+D(u,v)=1-H(u,v).
+\]
+
+\sectiontitle{Висновок}
+
+Короткий підсумок роботи.
+
+\begin{numberedreferences}
+  \item Author, A. A. (Year). Title of work. \textit{Journal or Publisher}.
+  \item Author, B. B., \& Author, C. C. (Year). Title of article. \textit{Journal Title, 12}(3), 45--67.
+\end{numberedreferences}
+
+\end{document}

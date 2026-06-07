@@ -61,6 +61,7 @@ Use these files as the main research memory:
 - `/docs/unity-shader-debugging.md` - Unity Desktop shader conventions and debugging checklist.
 - `/unity/scene-notes.md` - Unity test-scene notes.
 - `/shaders` - Unity ShaderLab/HLSL prototypes.
+- `/templates/latex/ukrainian-university-assignment-template.tex` - reusable LaTeX template for Ukrainian university assignments.
 
 The user mentioned `/shader`, but the existing project folder is `/shaders`; use `/shaders` unless explicitly asked to rename it.
 

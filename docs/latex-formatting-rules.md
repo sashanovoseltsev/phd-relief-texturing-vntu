@@ -4,6 +4,7 @@
 
 - Default storage location for LaTeX assignment artifacts: `tasks/year_2/science_projects_kovalenko`, unless the user specifies another folder.
 - Keep both source `.tex` and compiled `.pdf` files.
+- Default reusable template: `templates/latex/ukrainian-university-assignment-template.tex`.
 - Default document class for Ukrainian university text assignments: `extarticle` with `14pt` and `a4paper`.
 - Default font: Times New Roman through `fontspec`.
 - Prefer `XeLaTeX` or `LuaLaTeX` for Ukrainian text and Unicode formulas.
@@ -120,6 +121,19 @@ If `\justifying` is used, make sure this package is present in the preamble:
 ```
 
 For larger dissertation projects with many sources, prefer `biblatex` with an APA style file only after confirming that the selected LaTeX toolchain supports `biber`. For small university assignments, manual APA entries are simpler and more reliable with Tectonic.
+
+## Creating A New Assignment From The Template
+
+1. Copy `templates/latex/ukrainian-university-assignment-template.tex` into the target task folder.
+2. Rename the copied file according to the assignment.
+3. Replace the title, student line, research topic, section headings, body text, formulas, and bibliography entries.
+4. Compile from the folder containing the `.tex` file:
+
+```bash
+tectonic your-file.tex
+```
+
+5. Keep the `.tex` source and compiled `.pdf`; LaTeX service files such as `.aux`, `.log`, `.out`, `.xdv`, and `.synctex.gz` are ignored by Git.
 
 ## Source References For Formatting Rules
 

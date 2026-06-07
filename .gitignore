@@ -22,3 +22,5 @@
 *.ilg
 *.ind
 *.tmp
+
+.DS_Store
